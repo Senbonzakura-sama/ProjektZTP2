@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.question_details'|trans({'%id%': question.id|default('')}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
+{% block body %}
+    <p>
+        <a href="{{ path('question_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    </p>
+    {% if question is defined %}
+        <div style="text-align: center">
+            <h1>{{ question.title }}</h1>
+            <div style="font-size: 15px; text-align: center">
+                <table style="text-align: center; margin: auto">
+                    <tr>
+                        <td style="padding-right: 20px;"><b>{{ 'label.created_at'|trans }}</b></td>
+                        <td style="padding-right: 20px;"><b>{{ 'label.updated_at'|trans }}</b></td>
+                        <td style="padding-right: 20px;"><b>{{ 'label.category'|trans }}</b></td>
+                        <td><b>{{ 'answer_list'|trans }}</b></td>
+                    </tr>
+                    <tr>
+                        <td>{{ question.createdAt|format_date('short') }}</td>
+                        <td>{{ question.updatedAt|format_date('short') }}</td>
+                        <td>{{ question.category.title }}</td>
+                        <td>{{ answers|length }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="answers" style="margin: 20px;">
+            {% if answers|length > 0 %}
+                {% for answer in answers %}
+                    <div style="border-top: 1px solid #ccc; padding: 10px; display: flex; align-items: center;">
+                        <div style="flex: 1;">
+                            <h4>{{ answer.author.nickname }}</h4>
+                            <small>{{ answer.createdAt|format_datetime('medium', 'short') }}</small>
+                            <i class="{% if answer.isBest %}fas fa-star{% else %}far fa-star{% endif %}"></i>
+                        </div>
+                        <div style="flex: 2; padding-left: 20px;">
+                            <p>{{ answer.content }}</p>
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div>
+                                    {% if not answer.isBest %}
+                                        <form method="post" action="{{ path('answer_mark_best', {'id': answer.id}) }}" style="display: inline;">
+                                            <input type="hidden" name="_method" value="PUT">
+                                            <button type="submit" class="btn btn-outline-success">{{ 'Mark_as_Best_Answer'|trans }}</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post" action="{{ path('answer_unmark_best', {'id': answer.id}) }}" style="display: inline;">
+                                            <input type="hidden" name="_method" value="PUT">
+                                            <button type="submit" class="btn btn-outline-primary">{{ 'Unmark_as_Best_Answer'|trans }}</button>
+                                        </form>
+                                    {% endif %}
+                                    <br><br>
+                                    <a class="btn btn-outline-danger" href="{{ path('answer_delete', {id: answer.id}) }}" title="{{ 'answers.action_delete'|trans }}">
+                                        {{ 'answers.action_delete'|trans }}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div>{{ 'answers.no_answers'|trans }}</div>
+            {% endif %}
+            <p class="button" style="padding-top: 15px">
+                <a href="{{ path('question_answer', {id: question.id}) }}" title="{{ 'action_add_answer'|trans }}">
+                    {{ 'action_add_answer'|trans }}
+                </a>
+            </p>
+        </div>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

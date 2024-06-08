@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.record_view'|trans }} {{ user.id }}{% endblock %}
+
+{% block body %}
+
+
+
+    {% if user is defined %}
+        <h3>{{ 'label.id'|trans }}: {{ user.id }}</h3>
+        <p>{{ user.nickname }}</p>
+        <h3>{{'user.roles'|trans}}</h3>
+        {% set role = user.roles[user.roles|length - 1] %}
+        <p>
+            {% if role == 'ROLE_ADMIN' %}
+                Administrator
+            {% elseif role == 'ROLE_USER' %}
+                Użytkownik
+            {% else %}
+                unknown
+            {% endif %}
+        </p>
+        <h3>{{ 'label.email'|trans }}</h3>
+        <p>{{ user.email}}</p>
+
+        <a href="{{ url('user_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    {% else %}
+        <p>{{ 'message.record_not_exist'|trans }}</p>
+    {%  endif %}
+
+{% endblock %}

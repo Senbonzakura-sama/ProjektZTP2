@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label.content">
+                <source>label.content</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="label.tags">
+                <source>label.tags</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="message.empty_list">
+                <source>message.empty_list</source>
+                <target>List is empty.</target>
+            </trans-unit>
+            <trans-unit id="message.record_not_found">
+                <source>message.record_not_found</source>
+                <target>Record not found.</target>
+            </trans-unit>
+            <trans-unit id="title.record_list">
+                <source>title.record_list</source>
+                <target>List of questions</target>
+            </trans-unit>
+            <trans-unit id="title.record_view">
+                <source>title.record_view</source>
+                <target>Record view</target>
+            </trans-unit>
+            <trans-unit id="header.record_content">
+                <source>header.record_content</source>
+                <target>Content:</target>
+            </trans-unit>
+            <trans-unit id="header.record_tags">
+                <source>header.record_tags</source>
+                <target>Tags:</target>
+            </trans-unit>
+            <trans-unit id="message.record_not_exist">
+                <source>message.record_not_exist</source>
+                <target>This record does not exist.</target>
+            </trans-unit>
+            <trans-unit id="button.action_show">
+                <source>button.action_show</source>
+                <target>Show</target>
+            </trans-unit>
+            <trans-unit id="label.created_at">
+                <source>label.created_at</source>
+                <target>Creation date</target>
+            </trans-unit>
+            <trans-unit id="label.updated_at">
+                <source>label.updated_at</source>
+                <target>Update date</target>
+            </trans-unit>
+            <trans-unit id="action_logout">
+                <source>action_logout</source>
+                <target>Log out</target>
+            </trans-unit>
+            <trans-unit id="action_login">
+                <source>action_login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="user.action_delete">
+                <source>user.action_delete</source>
+                <target>Delete user</target>
+            </trans-unit>
+            <trans-unit id="user.action_edit">
+                <source>user.action_edit</source>
+                <target>Edit user</target>
+            </trans-unit>
+            <trans-unit id="user.action_create">
+                <source>user.action_create</source>
+                <target>Create new user</target>
+            </trans-unit>
+            <trans-unit id="user.email">
+                <source>user.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>View</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Author</target>
+            </trans-unit>
+            <trans-unit id="label.tag">
+                <source>label.tag</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="label_register">
+                <source>label_register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="title.user_list">
+                <source>title.user_list</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="user.nickname">
+                <source>user.nickname</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="user.roles">
+                <source>user.roles</source>
+                <target>Access rights</target>
+            </trans-unit>
+            <trans-unit id="user.password_repeat">
+                <source>user.password_repeat</source>
+                <target>Repeat password</target>
+            </trans-unit>
+            <trans-unit id="user.password">
+                <source>user.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="label_home">
+                <source>label_home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="label_category">
+                <source>label_category</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="label_question">
+                <source>label_question</source>
+                <target>Questions</target>
+            </trans-unit>
+            <trans-unit id="title.category_details">
+                <source>title.category_details</source>
+                <target>Searching category</target>
+            </trans-unit>
+            <trans-unit id="title.question_list">
+                <source>title.question_list</source>
+                <target>Questions</target>
+            </trans-unit>
+            <trans-unit id="action_save">
+                <source>action_save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="action_back_to_list">
+                <source>action_back_to_list</source>
+                <target>Back to questions</target>
+            </trans-unit>
+            <trans-unit id="title.category_create">
+                <source>title.category_create</source>
+                <target>Create a category</target>
+            </trans-unit>
+            <trans-unit id="label.none">
+                <source>label.none</source>
+                <target>Choose</target>
+            </trans-unit>
+            <trans-unit id="comment_list">
+                <source>comment_list</source>
+                <target>Answers</target>
+            </trans-unit>
+            <trans-unit id="action_add_comment">
+                <source>action_add_comment</source>
+                <target>Add new answer</target>
+            </trans-unit>
+            <trans-unit id="comments.no_comments">
+                <source>comments.no_comments</source>
+                <target>There are no answers yet..</target>
+            </trans-unit>
+            <trans-unit id="title_question_comment_create">
+                <source>title_question_comment_create</source>
+                <target>Make a new answer</target>
+            </trans-unit>
+            <trans-unit id="label_content">
+                <source>label_content</source>
+                <target>Your answer:</target>
+            </trans-unit>
+            <trans-unit id="action_back_to_question">
+                <source>action_back_to_question</source>
+                <target>Go back to answers</target>
+            </trans-unit>
+            <trans-unit id="comments.action_delete">
+                <source>comments.action_delete</source>
+                <target>Delete answer</target>
+            </trans-unit>
+            <trans-unit id="message_added_successfully">
+                <source>message_added_successfully</source>
+                <target>Answer is added successfully</target>
+            </trans-unit>
+            <trans-unit id="title.category_delete">
+                <source>title.category_delete</source>
+                <target>Delete category</target>
+            </trans-unit>
+            <trans-unit id="delete_confirm">
+                <source>delete_confirm</source>
+                <target>Delete confirm</target>
+            </trans-unit>
+            <trans-unit id="title_comment_delete">
+                <source>title_comment_delete</source>
+                <target>Delete the selected answer</target>
+            </trans-unit>
+            <trans-unit id="message_deleted_successfully">
+                <source>message_deleted_successfully</source>
+                <target>Answer is deleted successfully</target>
+            </trans-unit>
+            <trans-unit id="message.registered_successfully">
+                <source>message.registered_successfully</source>
+                <target>User is registered successfully</target>
+            </trans-unit>
+            <trans-unit id="message.edited_successfully">
+                <source>message.edited_successfully</source>
+                <target>Edited successfully</target>
+            </trans-unit>
+            <trans-unit id="title.category_list">
+                <source>title.category_list</source>
+                <target>Categories</target>
+            </trans-unit>
+            <trans-unit id="label.sign.in">
+                <source>label.sign.in</source>
+                <target>Please sign in</target>
+            </trans-unit>
+            <trans-unit id="label.email">
+                <source>label.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="label.sign_in">
+                <source>label.sign_in</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="title.category_edit">
+                <source>title.category_edit</source>
+                <target>Edit category</target>
+            </trans-unit>
+            <trans-unit id="message.category_contains_questions">
+                <source>message.category_contains_questions</source>
+                <target>This category is in use!</target>
+            </trans-unit>
+            <trans-unit id="title.question_edit">
+                <source>title.question_edit</source>
+                <target>Edit question</target>
+            </trans-unit>
+            <trans-unit id="message.deleted_successfully">
+                <source>message.deleted_successfully</source>
+                <target>Category is deleted successfully</target>
+            </trans-unit>
+            <trans-unit id="message.created_successfully">
+                <source>message.created_successfully</source>
+                <target>Category is created successfully</target>
+            </trans-unit>
+            <trans-unit id="title.answer_create">
+                <source>title.answer_create</source>
+                <target>Add an answer</target>
+            </trans-unit>
+            <trans-unit id="title.question_delete">
+                <source>title.question_delete</source>
+                <target>Delete question</target>
+            </trans-unit>
+            <trans-unit id="question.no_question">
+                <source>question.no_question</source>
+                <target>There are no questions for this category</target>
+            </trans-unit>
+            <trans-unit id="message.added_answer">
+                <source>message.added_answer</source>
+                <target>Answer is added successfully</target>
+            </trans-unit>
+            <trans-unit id="title.mark_as_best">
+                <source>title.mark_as_best</source>
+                <target>Mark as best</target>
+            </trans-unit>
+            <trans-unit id="title.answer_edit">
+                <source>title.answer_edit</source>
+                <target>Edit answer title</target>
+            </trans-unit>
+            <trans-unit id="message.form_error">
+                <source>message.form_error</source>
+                <target>Error</target>
+            </trans-unit>
+            <trans-unit id="title_registration">
+                <source>title_registration</source>
+                <target>Registration</target>
+            </trans-unit>
+            <trans-unit id="action_registration">
+                <source>action_registration</source>
+                <target>Registration</target>
+            </trans-unit>
+            <trans-unit id="title_answer_delete">
+                <source>title_answer_delete</source>
+                <target>Delete title</target>
+            </trans-unit>
+            <trans-unit id="action.back_to_list">
+                <source>action.back_to_list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="title_question_answer_create">
+                <source>title_question_answer_create</source>
+                <target>Answer title</target>
+            </trans-unit>
+            <trans-unit id="button.action_create">
+                <source>button.action_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="button.action_edit">
+                <source>button.action_edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="button.action_delete">
+                <source>button.action_delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="title.question_create">
+                <source>title.question_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="label.category">
+                <source>label.category</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="title.question_details">
+                <source>title.question_details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="answer_list">
+                <source>answer_list</source>
+                <target>Answer list</target>
+            </trans-unit>
+            <trans-unit id="answers.action_delete">
+                <source>answers.action_delete</source>
+                <target>Answer delete</target>
+            </trans-unit>
+            <trans-unit id="answers.no_answers">
+                <source>answers.no_answers</source>
+                <target>There are no answers</target>
+            </trans-unit>
+            <trans-unit id="action_add_answer">
+                <source>action_add_answer</source>
+                <target>Add an answer</target>
+            </trans-unit>
+            <trans-unit id="message.category_contains_tasks">
+                <source>message.category_contains_tasks</source>
+                <target>Category is in used</target>
+            </trans-unit>
+            <trans-unit id="message_registered_successfully">
+                <source>message_registered_successfully</source>
+                <target>Registered succesfuly</target>
+            </trans-unit>
+            <trans-unit id="title.tag_create">
+                <source>title.tag_create</source>
+                <target>Tag has been created</target>
+            </trans-unit>
+            <trans-unit id="title.tag_delete">
+                <source>title.tag_delete</source>
+                <target>Tag has been deleted</target>
+            </trans-unit>
+            <trans-unit id="title.tag_edit">
+                <source>title.tag_edit</source>
+                <target>Tag has been edited</target>
+            </trans-unit>
+            <trans-unit id="message.email_already_exists">
+                <source>message.email_already_exists</source>
+                <target>Email already exists</target>
+            </trans-unit>
+            <trans-unit id="message.best_answer_marked">
+                <source>message.best_answer_marked</source>
+                <target>Best answer marked</target>
+            </trans-unit>
+            <trans-unit id="message.best_answer_unmarked">
+                <source>message.best_answer_unmarked</source>
+                <target>Best answer unmarked</target>
+            </trans-unit>
+            <trans-unit id="Mark_as_Best_Answer">
+                <source>Mark_as_Best_Answer</source>
+                <target>Mark</target>
+            </trans-unit>
+            <trans-unit id="Unmark_as_Best_Answer">
+                <source>Unmark_as_Best_Answer</source>
+                <target>Unmark</target>
+            </trans-unit>
+            <trans-unit id="message.user_contains_questions">
+                <source>message.user_contains_questions</source>
+                <target>User has asked a question</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
