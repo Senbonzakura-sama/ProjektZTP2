@@ -21,23 +21,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class RegistrationController extends AbstractController
 {
-    /**
-     * @var UserService
-     */
     private UserService $userService;
-    /**
-     * @var RegistrationService
-     */
+
     private RegistrationService $registrationService;
 
-    /**
-     * @var TranslatorInterface
-     */
     private TranslatorInterface $translator;
 
     /**
      * Constructor.
-     *
      * @param RegistrationService $registrationService
      * @param UserService         $userService
      * @param TranslatorInterface $translator
@@ -50,6 +41,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
+     * Create action.
      * @param Request $request
      *
      * @return Response
@@ -62,7 +54,6 @@ class RegistrationController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
@@ -77,7 +68,6 @@ class RegistrationController extends AbstractController
 
                 return $this->redirectToRoute('app_register');
             }
-
 
             $this->registrationService->register([
                 'email' => $data->getEmail(),

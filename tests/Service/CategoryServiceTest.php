@@ -8,6 +8,7 @@ namespace App\Tests\Service;
 use App\Entity\Category;
 use App\Service\CategoryService;
 use App\Service\CategoryServiceInterface;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\ORMException;
@@ -15,7 +16,6 @@ use Exception;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use DateTimeImmutable;
 
 /**
  * Class CategoryServiceTest.
@@ -32,7 +32,6 @@ class CategoryServiceTest extends KernelTestCase
      */
     private ?CategoryServiceInterface $categoryService;
 
-
     /**
      * Set up test.
      *
@@ -46,7 +45,6 @@ class CategoryServiceTest extends KernelTestCase
         $this->categoryService = $container->get(CategoryService::class);
     }
 
-
     /**
      * Test save.
      *
@@ -57,8 +55,6 @@ class CategoryServiceTest extends KernelTestCase
     {
         // given
         $expectedCategory = new Category();
-        // Current date and time
-        // Current date and time
         $expectedCategory->setTitle('Test_Category'.bin2hex(random_bytes(5)));
         $expectedCategory->setCreatedAt(new DateTimeImmutable());
         $expectedCategory->setUpdatedAt(new DateTimeImmutable());

@@ -8,8 +8,6 @@ namespace App\Controller;
 use App\Entity\Answer;
 use App\Form\Type\AnswerType;
 use App\Service\AnswerService;
-use Doctrine\ORM\Exception\ORMException;
-use Doctrine\ORM\OptimisticLockException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -24,16 +22,12 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[Route('/answer')]
 class AnswerController extends AbstractController
 {
-    /**
-     * AnswerService.
-     *
-     * @var AnswerService
-     */
     private AnswerService $answerService;
+
+    private TranslatorInterface $translator;
 
     /**
      * Constructor.
-     *
      * @param AnswerService       $answerService
      * @param TranslatorInterface $translator
      */
@@ -44,15 +38,7 @@ class AnswerController extends AbstractController
     }
 
     /**
-     * Translator.
-     *
-     * @var TranslatorInterface
-     */
-    private TranslatorInterface $translator;
-
-    /**
      * Edit action.
-     *
      * @param Request $request
      * @param Answer  $answer
      *
@@ -87,12 +73,10 @@ class AnswerController extends AbstractController
 
     /**
      * Delete action.
-     *
      * @param Request $request
      * @param Answer  $answer
      *
      * @return Response
-     *
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/delete', name: 'answer_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
@@ -123,26 +107,24 @@ class AnswerController extends AbstractController
     }
 
     /**
+     * markAsBest action.
      * @param Answer        $answer
      * @param AnswerService $answerService
      *
      * @return Response
-     *
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/mark-best', name: 'answer_mark_best', methods: ['PUT'])]
     public function markAsBest(Answer $answer, AnswerService $answerService): Response
     {
-        try {
-            $answerService->markAsBest($answer);
-        } catch (OptimisticLockException|ORMException) {
-        }
+        $answerService->markAsBest($answer);
         $this->addFlash('success', $this->translator->trans('message.best_answer_marked'));
 
         return $this->redirectToRoute('question_show', ['id' => $answer->getQuestion()->getId()]);
     }
 
     /**
+     * unmarkBest action.
      * @param Answer        $answer
      * @param AnswerService $answerService
      *
@@ -152,10 +134,7 @@ class AnswerController extends AbstractController
     #[Route('/{id}/unmark-best', name: 'answer_unmark_best', methods: ['PUT'])]
     public function unmarkBest(Answer $answer, AnswerService $answerService): Response
     {
-        try {
-            $answerService->unmarkAsBest($answer);
-        } catch (OptimisticLockException|ORMException) {
-        }
+        $answerService->unmarkAsBest($answer);
         $this->addFlash('warning', $this->translator->trans('message.best_answer_unmarked'));
 
         return $this->redirectToRoute('question_show', ['id' => $answer->getQuestion()->getId()]);

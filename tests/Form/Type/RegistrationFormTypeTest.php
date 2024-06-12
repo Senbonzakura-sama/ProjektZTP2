@@ -2,6 +2,7 @@
 /**
  * RegistrationFormTypeTest.
  */
+
 namespace App\Tests\Form\Type;
 
 use App\Form\Type\RegistrationFormType;
@@ -16,6 +17,7 @@ class RegistrationFormTypeTest extends TypeTestCase
 {
     /**
      * testSubmitValidData.
+     *
      * @return void
      */
     public function testSubmitValidData()
@@ -53,6 +55,7 @@ class RegistrationFormTypeTest extends TypeTestCase
 
     /**
      * testBuildForm.
+     *
      * @return void
      */
     public function testBuildForm()
@@ -63,8 +66,10 @@ class RegistrationFormTypeTest extends TypeTestCase
         $this->assertTrue($form->has('password'));
         $this->assertTrue($form->has('nickname'));
     }
+
     /**
      * testGetBlockPrefix.
+     *
      * @return void
      */
     public function testGetBlockPrefix()
@@ -72,8 +77,10 @@ class RegistrationFormTypeTest extends TypeTestCase
         $type = new RegistrationFormType();
         $this->assertEquals('user', $type->getBlockPrefix());
     }
+
     /**
      * getExtensions.
+     *
      * @return ValidatorExtension[]
      */
     protected function getExtensions(): array

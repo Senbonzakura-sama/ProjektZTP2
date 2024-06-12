@@ -37,6 +37,7 @@ interface UserServiceInterface
     public function delete(User $user): void;
 
     /**
+     * canBeDeleted.
      * @param User $user
      *
      * @return bool

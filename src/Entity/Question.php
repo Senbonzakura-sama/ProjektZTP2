@@ -5,7 +5,6 @@
 
 namespace App\Entity;
 
-use AllowDynamicProperties;
 use App\Repository\QuestionRepository;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -17,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class Question.
  */
-#[AllowDynamicProperties]
+#[\AllowDynamicProperties]
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
 #[ORM\Table(name: 'questions')]
 class Question
@@ -52,6 +51,7 @@ class Question
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 255)]
     private ?string $title;
 
     /**
@@ -85,6 +85,7 @@ class Question
     #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     #[Assert\Type(User::class)]
+    #[Assert\Length(min: 3, max: 255)]
     private ?User $author;
 
     /**
@@ -250,7 +251,7 @@ class Question
     }
 
     /**
-     * Getter for author.
+     * Getter for Author.
      * @return User|null
      */
     public function getAuthor(): ?User
@@ -262,7 +263,7 @@ class Question
      * Setter for author.
      * @param User|null $author
      *
-     * @return Question
+     * @return $this
      */
     public function setAuthor(?User $author): Question
     {
@@ -273,6 +274,7 @@ class Question
 
     /**
      * Getter for answers.
+     *
      * @return Collection<int, Answer>
      */
     public function getAnswers(): Collection
@@ -308,7 +310,7 @@ class Question
     }
 
     /**
-     * Getter for content.
+     * Getter for Content.
      * @return string|null
      */
     public function getContent(): ?string
@@ -318,7 +320,6 @@ class Question
 
     /**
      * Setter for content.
-     *
      * @param string|null $content
      *
      * @return void
@@ -330,7 +331,6 @@ class Question
 
     /**
      * Getter for email.
-     *
      * @return string|null
      */
     public function getEmail(): ?string
@@ -339,8 +339,7 @@ class Question
     }
 
     /**
-     * Setter for email.
-     *
+     * Setter for Email.
      * @param string $email
      *
      * @return void
@@ -351,7 +350,7 @@ class Question
     }
 
     /**
-     * Getter for nickname.
+     * Getter for Nickname.
      * @return string|null
      */
     public function getNickname(): ?string
@@ -360,8 +359,7 @@ class Question
     }
 
     /**
-     * Setter for nickname.
-     *
+     * Setter for Nickname.
      * @param string $nickname
      *
      * @return void

@@ -2,6 +2,7 @@
 /**
  * AnswerService Test.
  */
+
 namespace App\Tests\Service;
 
 use App\Entity\Answer;
@@ -16,21 +17,17 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AnswerServiceTest
+ * AnswerServiceTest.
  */
 class AnswerServiceTest extends TestCase
 {
-    /**
-     * @var AnswerRepository|(AnswerRepository&object&MockObject)|(AnswerRepository&MockObject)|(object&MockObject)|MockObject
-     */
-    private $answerRepository;
-    private $paginator;
-    private $entityManager;
+    private AnswerRepository|MockObject $answerRepository;
+    private PaginatorInterface|MockObject $paginator;
+    private EntityManagerInterface|MockObject $entityManager;
     private AnswerService $answerService;
 
     /**
      * setUp.
-     * @return void
      */
     protected function setUp(): void
     {
@@ -45,7 +42,8 @@ class AnswerServiceTest extends TestCase
     }
 
     /**
-     * testGetPaginatedList
+     * testGetPaginatedList.
+     *
      * @return void
      */
     public function testGetPaginatedList()
@@ -69,6 +67,7 @@ class AnswerServiceTest extends TestCase
 
     /**
      * TestSave.
+     *
      * @return void
      */
     public function testSave()
@@ -83,7 +82,8 @@ class AnswerServiceTest extends TestCase
     }
 
     /**
-     * test Delete
+     * test Delete.
+     *
      * @return void
      */
     public function testDelete()
@@ -99,7 +99,8 @@ class AnswerServiceTest extends TestCase
     }
 
     /**
-     * TestFindBy
+     * TestFindBy.
+     *
      * @return void
      */
     public function testFindBy()
@@ -117,7 +118,8 @@ class AnswerServiceTest extends TestCase
     }
 
     /**
-     * testMarkAsBest
+     * testMarkAsBest.
+     *
      * @return void
      */
     public function testMarkAsBest()
@@ -144,7 +146,8 @@ class AnswerServiceTest extends TestCase
     }
 
     /**
-     * testUnmarkAsBest
+     * testUnmarkAsBest.
+     *
      * @return void
      */
     public function testUnmarkAsBest()

@@ -28,10 +28,8 @@ class UserService implements UserServiceInterface
      */
     private PaginatorInterface $paginator;
 
-
     /**
      * Constructor.
-     *
      * @param UserRepository     $userRepository
      * @param PaginatorInterface $paginator
      */
@@ -92,6 +90,7 @@ class UserService implements UserServiceInterface
     }
 
     /**
+     * canBeDeleted.
      * @param User $user
      *
      * @return bool

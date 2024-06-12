@@ -1,7 +1,8 @@
 <?php
 /**
- * Tag service test
+ * Tag service test.
  */
+
 namespace App\Tests\Service;
 
 use App\Entity\Tag;
@@ -11,12 +12,10 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * Class TagServiceTest
+ * Class TagServiceTest.
  */
 class TagServiceTest extends KernelTestCase
 {
@@ -25,10 +24,7 @@ class TagServiceTest extends KernelTestCase
     private ?TagService $tagService;
 
     /**
-     * Set up test
-     *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
+     * Set up test.
      */
     public function setUp(): void
     {
@@ -38,23 +34,23 @@ class TagServiceTest extends KernelTestCase
     }
 
     /**
-     * Save test
+     * Save test.
      *
      * @throws NoResultException
-     * @throws NonUniqueResultException
+     * @throws NonUniqueResultException|NoResultException|NonUniqueResultException
      */
     public function testSave(): void
     {
-        //given
+        // given
         $expectedTag = new Tag();
         $expectedTag->setCreatedAt(new DateTimeImmutable());
         $expectedTag->setUpdatedAt(new DateTimeImmutable());
         $expectedTag->setTitle('Tag Test');
 
-        //when
+        // when
         $this->tagService->save($expectedTag);
 
-        //then
+        // then
         $expectedTagId = $expectedTag->getId();
         $resultTag = $this->entityManager->createQueryBuilder()
             ->select('tag')
@@ -68,13 +64,13 @@ class TagServiceTest extends KernelTestCase
     }
 
     /**
-     * Delete test
+     * Delete test.
      *
      * @throws NonUniqueResultException
      */
     public function testDelete(): void
     {
-        //given
+        // given
         $tagToDelete = new Tag();
         $tagToDelete->setCreatedAt(new DateTimeImmutable());
         $tagToDelete->setUpdatedAt(new DateTimeImmutable());
@@ -84,10 +80,10 @@ class TagServiceTest extends KernelTestCase
         $this->entityManager->flush();
         $deletedTagId = $tagToDelete->getId();
 
-        //when
+        // when
         $this->tagService->delete($tagToDelete);
 
-        //then
+        // then
         $resultTag = $this->entityManager->createQueryBuilder()
             ->select('tag')
             ->from(Tag::class, 'tag')
@@ -100,12 +96,11 @@ class TagServiceTest extends KernelTestCase
     }
 
     /**
-     * Paginated list test
-     *
+     * Paginated list test.
      */
     public function testPaginatedList(): void
     {
-        //given
+        // given
         $page = 1;
         $dataSetSize = 3;
         $expectedResultSize = 3;
@@ -122,15 +117,16 @@ class TagServiceTest extends KernelTestCase
             ++$counter;
         }
 
-        //when
+        // when
         $result = $this->tagService->getPaginatedList($page);
 
-        //then
+        // then
         $this->assertEquals($expectedResultSize, $result->count());
     }
 
     /**
      * Test findOneById method.
+     *
      * @throws NonUniqueResultException
      */
     public function testFindOneById(): void

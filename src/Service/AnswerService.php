@@ -33,7 +33,6 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Constructor.
-     *
      * @param AnswerRepository       $answerRepository
      * @param PaginatorInterface     $paginator
      * @param EntityManagerInterface $entityManager
@@ -63,7 +62,6 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Save Answer.
-     *
      * @param Answer $answer
      *
      * @return void
@@ -75,7 +73,6 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Delete answer.
-     *
      * @param Answer $answer
      *
      * @return void
@@ -87,7 +84,6 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Find by question.
-     *
      * @param array $question
      *
      * @return array
@@ -99,11 +95,9 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Mark as best.
-     *
      * @param Answer $answer
      *
      * @return void
-     *
      */
     public function markAsBest(Answer $answer): void
     {
@@ -115,11 +109,9 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Unmark as best.
-     *
      * @param Answer $answer
      *
      * @return void
-     *
      */
     public function unmarkAsBest(Answer $answer): void
     {

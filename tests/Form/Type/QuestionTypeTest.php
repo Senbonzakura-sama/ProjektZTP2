@@ -2,6 +2,7 @@
 /**
  * QuestionTypeTest.
  */
+
 namespace App\Tests\Form\Type;
 
 use App\Entity\Question;
@@ -14,12 +15,13 @@ use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * QuestionTypeTest
+ * QuestionTypeTest.
  */
 class QuestionTypeTest extends TypeTestCase
 {
     /**
      * testBuildForm.
+     *
      * @return void
      */
     public function testBuildForm()
@@ -53,6 +55,7 @@ class QuestionTypeTest extends TypeTestCase
 
     /**
      * testConfigureOptions.
+     *
      * @return void
      */
     public function testConfigureOptions()
@@ -70,6 +73,7 @@ class QuestionTypeTest extends TypeTestCase
 
     /**
      * testGetBlockPrefix.
+     *
      * @return void
      */
     public function testGetBlockPrefix()

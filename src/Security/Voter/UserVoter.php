@@ -16,22 +16,14 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class UserVoter extends Voter
 {
-    /**
-     *
-     */
-    const EDIT = 'EDIT';
+    public const EDIT = 'EDIT';
 
-    /**
-     *
-     */
-    const DELETE = 'DELETE';
+    public const DELETE = 'DELETE';
 
-    /**
-     * @var Security
-     */
     private Security $security;
 
     /**
+     * Constructor.
      * @param Security $security
      */
     public function __construct(Security $security)
@@ -40,6 +32,7 @@ class UserVoter extends Voter
     }
 
     /**
+     * supports.
      * @param string $attribute
      * @param $subject
      *
@@ -52,6 +45,7 @@ class UserVoter extends Voter
     }
 
     /**
+     * voteOnAttribute.
      * @param string         $attribute
      * @param $subject
      * @param TokenInterface $token

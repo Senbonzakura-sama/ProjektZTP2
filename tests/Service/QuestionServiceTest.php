@@ -2,6 +2,7 @@
 /**
  * QuestionServiceTest.
  */
+
 namespace App\Tests\Service;
 
 use App\Entity\Category;
@@ -24,7 +25,6 @@ class QuestionServiceTest extends TestCase
 
     /**
      * SetUp.
-     * @return void
      */
     protected function setUp(): void
     {
@@ -39,8 +39,7 @@ class QuestionServiceTest extends TestCase
     }
 
     /**
-     * testGetPaginatedListReturnsPaginationInterface
-     * @return void
+     * testGetPaginatedListReturnsPaginationInterface.
      */
     public function testGetPaginatedListReturnsPaginationInterface(): void
     {
@@ -59,8 +58,7 @@ class QuestionServiceTest extends TestCase
     }
 
     /**
-     * estGetPaginatedListByAuthorReturnsPaginationInterface
-     * @return void
+     * estGetPaginatedListByAuthorReturnsPaginationInterface.
      */
     public function testGetPaginatedListByAuthorReturnsPaginationInterface(): void
     {
@@ -80,8 +78,7 @@ class QuestionServiceTest extends TestCase
     }
 
     /**
-     * testGetPaginatedListByCategoryReturnsPaginationInterface
-     * @return void
+     * testGetPaginatedListByCategoryReturnsPaginationInterface.
      */
     public function testGetPaginatedListByCategoryReturnsPaginationInterface(): void
     {
@@ -101,8 +98,7 @@ class QuestionServiceTest extends TestCase
     }
 
     /**
-     * testSave
-     * @return void
+     * testSave.
      */
     public function testSave(): void
     {
@@ -117,7 +113,6 @@ class QuestionServiceTest extends TestCase
 
     /**
      * testDelete.
-     * @return void
      */
     public function testDelete(): void
     {

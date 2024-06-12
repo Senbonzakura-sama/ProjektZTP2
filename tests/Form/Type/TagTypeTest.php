@@ -15,25 +15,23 @@ use Symfony\Component\Form\Test\TypeTestCase;
 class TagTypeTest extends TypeTestCase
 {
     /**
-     * testSubmitValidDate.
+     * Test submitting valid data.
+     *
      * @return void
      */
-    public function testSubmitValidDate()
+    public function testSubmitValidData()
     {
-
-        $formatData = [
-            'title' => 'TestTag'
+        $formData = [
+            'title' => 'TestTag',
         ];
-
         $model = new Tag();
         $form = $this->factory->create(TagType::class, $model);
-
         $expected = new Tag();
         $expected->setTitle('TestTag');
-
-        $form->submit($formatData);
+        $form->submit($formData);
         $this->assertTrue($form->isSynchronized());
-
         $this->assertEquals($expected, $model);
+        $errors = $form->getErrors(true);
+        $this->assertCount(0, $errors);
     }
 }

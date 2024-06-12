@@ -2,6 +2,7 @@
 /**
  * Security Controller.
  */
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,11 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
- * Class SecurityController
+ * Class SecurityController.
  */
 class SecurityController extends AbstractController
 {
     /**
+     * login action.
      * @param AuthenticationUtils $authenticationUtils
      *
      * @return Response
@@ -22,7 +24,6 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
@@ -30,6 +31,7 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * logout action.
      * @return void
      */
     #[Route(path: '/logout', name: 'app_logout')]

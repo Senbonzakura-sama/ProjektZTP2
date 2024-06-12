@@ -26,20 +26,16 @@ class CategoryController extends AbstractController
 {
     /**
      * Category Service.
-     *
-     * @var CategoryServiceInterface
      */
     private CategoryServiceInterface $categoryService;
 
     /**
      * Translator.
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
     /**
      * Constructor.
-     *
      * @param CategoryServiceInterface $categoryService
      * @param QuestionServiceInterface $questionService
      * @param TranslatorInterface      $translator
@@ -50,9 +46,9 @@ class CategoryController extends AbstractController
         $this->questionService = $questionService;
         $this->translator = $translator;
     }
+
     /**
      * Index action.
-     *
      * @param Request $request
      *
      * @return Response
@@ -66,9 +62,9 @@ class CategoryController extends AbstractController
 
         return $this->render('category/index.html.twig', ['pagination' => $pagination]);
     }
+
     /**
      * Show action.
-     *
      * @param Category $category
      * @param Request  $request
      *
@@ -92,6 +88,7 @@ class CategoryController extends AbstractController
             'category' => $category,
         ]);
     }
+
     /**
      * Create action.
      * @param Request $request
@@ -127,9 +124,9 @@ class CategoryController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Edit action.
-     *
      * @param Request  $request
      * @param Category $category
      *
@@ -168,9 +165,9 @@ class CategoryController extends AbstractController
             ]
         );
     }
+
     /**
      * Delete action.
-     *
      * @param Request  $request
      * @param Category $category
      *
@@ -214,9 +211,9 @@ class CategoryController extends AbstractController
             ]
         );
     }
+
     /**
      * GenerateSLugFromTitle action.
-     *
      * @param string $title
      *
      * @return string

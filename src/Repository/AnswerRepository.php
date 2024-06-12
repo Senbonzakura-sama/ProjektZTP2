@@ -66,15 +66,15 @@ class AnswerRepository extends ServiceEntityRepository
      * Delete record.
      *
      * @param Answer $answer Answer entity
-     *
      */
     public function delete(Answer $answer): void
     {
         $this->_em->remove($answer);
         $this->_em->flush();
     }
+
     /**
-     * resetBestAnswerForQuestion
+     * resetBestAnswerForQuestion.
      * @param Question $question
      *
      * @return void
@@ -87,9 +87,9 @@ class AnswerRepository extends ServiceEntityRepository
         }
         $this->_em->flush();
     }
+
     /**
      * Get or create new query builder.
-     *
      *
      * @return QueryBuilder Query builder
      */

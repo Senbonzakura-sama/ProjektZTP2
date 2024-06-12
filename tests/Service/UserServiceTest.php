@@ -1,6 +1,6 @@
 <?php
 /**
- * UserServiceTest.php
+ * UserServiceTest.php.
  */
 
 namespace App\Tests\Service;
@@ -21,20 +21,14 @@ use PHPUnit\Framework\TestCase;
  */
 class UserServiceTest extends TestCase
 {
-    /**
-     * @var UserRepository|(UserRepository&object&MockObject)|(UserRepository&MockObject)|(object&MockObject)|MockObject
-     */
-    private $userRepository;
-    /**
-     * @var PaginatorInterface|(PaginatorInterface&object&MockObject)|(PaginatorInterface&MockObject)|(object&MockObject)|MockObject
-     */
-    private $paginator;
-    /**
-     * @var UserService
-     */
+    private UserRepository|MockObject $userRepository;
+
+    private PaginatorInterface|MockObject $paginator;
+
     private UserService $userService;
 
     /**
+     * setUp action.
      * @return void
      */
     protected function setUp(): void
@@ -115,6 +109,7 @@ class UserServiceTest extends TestCase
 
         $this->assertTrue($result);
     }
+
     /**
      * @return void
      */

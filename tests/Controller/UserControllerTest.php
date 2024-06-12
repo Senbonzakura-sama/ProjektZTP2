@@ -1,18 +1,20 @@
 <?php
 /**
- * userControllerTest
+ * userControllerTest.
  */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class userControllerTest
+ * Class userControllerTest.
  */
 class UserControllerTest extends WebTestCase
 {
     /**
-     * testIndex,
+     * testIndex,.
+     *
      * @return void
      */
     public function testIndex()
@@ -25,6 +27,7 @@ class UserControllerTest extends WebTestCase
 
     /**
      * testShow.
+     *
      * @return void
      */
     public function testShow()

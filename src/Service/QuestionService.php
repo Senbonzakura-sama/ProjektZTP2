@@ -58,7 +58,6 @@ class QuestionService implements QuestionServiceInterface
     /**
      * Get paginated list by author.
      * @param int  $page
-     *
      * @param User $author
      *
      * @return PaginationInterface
@@ -82,7 +81,6 @@ class QuestionService implements QuestionServiceInterface
      */
     public function getPaginatedListByCategory(int $page, Category $category): PaginationInterface
     {
-
         return $this->paginator->paginate(
             $this->questionRepository->queryByCategory($category),
             $page,

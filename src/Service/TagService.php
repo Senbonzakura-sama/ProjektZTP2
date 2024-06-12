@@ -29,7 +29,6 @@ class TagService implements TagServiceInterface
     /**
      * Constructor.
      * @param TagRepository      $tagRepository
-     *
      * @param PaginatorInterface $paginator
      */
     public function __construct(TagRepository $tagRepository, PaginatorInterface $paginator)
@@ -58,11 +57,11 @@ class TagService implements TagServiceInterface
      * FindOneById.
      * @param int $id
      *
-     * @return Tag|null //tutaj dodane
+     * @return Tag|null//tutaj dodane
      *
      * @throws NonUniqueResultException
      */
-    public function findOneById(int $id): ?Tag//dodane
+    public function findOneById(int $id): ?Tag// dodane
     {
         return $this->repository->findOneById($id);
     }
@@ -79,7 +78,6 @@ class TagService implements TagServiceInterface
 
     /**
      * Delete entity.
-     *
      * @param Tag $tag
      *
      * @return void

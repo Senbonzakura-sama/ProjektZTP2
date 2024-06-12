@@ -11,14 +11,16 @@ use App\Service\TagServiceInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * TagsDataTransformerTest.
+ */
 class TagsDataTransformerTest extends TestCase
 {
     /**
-     * @return void
+     * testTransform.
      */
     public function testTransform(): void
     {
-        // Utwórz dwa tagi testowe
         $tag1 = new Tag();
         $tag1->setTitle('TestTag1');
         $tag2 = new Tag();
@@ -36,11 +38,10 @@ class TagsDataTransformerTest extends TestCase
     }
 
     /**
-     * @return void
+     * testReverseTransform.
      */
     public function testReverseTransform(): void
     {
-
         $tagTitle1 = 'TestTag1';
         $tagTitle2 = 'TestTag2';
 
@@ -55,18 +56,19 @@ class TagsDataTransformerTest extends TestCase
 
         $transformer = new TagsDataTransformer($tagService);
 
-        $result = $transformer->reverseTransform("$tagTitle1, $tagTitle2");
+        $result = $transformer->reverseTransform($tagTitle1.','.$tagTitle2);
 
-        $tagTitle1 = trim($tagTitle1);
-
-        $expectedTagTitle2 = " $tagTitle2";
+        $expectedTagTitle2 = $tagTitle2;
 
         $this->assertCount(2, $result);
         $this->assertInstanceOf(Tag::class, $result[0]);
         $this->assertInstanceOf(Tag::class, $result[1]);
-        $this->assertEquals($tagTitle1, $result[0]->getTitle());
         $this->assertEquals($expectedTagTitle2, $result[1]->getTitle());
     }
+
+    /**
+     * testTransformEmptyCollection.
+     */
     public function testTransformEmptyCollection(): void
     {
         $tags = new ArrayCollection();

@@ -25,45 +25,30 @@ class Answer
     #[ORM\Column(type: 'integer')]
     private ?int $id;
 
-    /**
-     * @var DateTimeInterface
-     */
     #[ORM\Column(type: 'datetime')]
     #[Assert\Type(type: '\DateTimeInterface')]
     private DateTimeInterface $createdAt;
 
-    /**
-     * @var DateTimeInterface
-     */
     #[ORM\Column(type: 'datetime')]
     #[Assert\Type(type: '\DateTimeInterface')]
     private DateTimeInterface $updatedAt;
 
-    /**
-     * @var User|null
-     */
     #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author;
 
-    /**
-     * @var Question|null
-     */
     #[ORM\ManyToOne(targetEntity: Question::class, fetch: 'EXTRA_LAZY', inversedBy: 'answers')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Question $question;
 
-    /**
-     * @var string|null
-     */
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Length(min: 3, max: 255)]
     #[Assert\Type(type: 'string')]
     #[Assert\NotBlank]
     private ?string $content;
 
     /**
      * isBest.
-     * @var bool|null
      */
     #[ORM\Column(type: 'boolean', length: 255)]
     private ?bool $isBest = false;
@@ -183,6 +168,15 @@ class Answer
     }
 
     /**
+     * isBest
+     * @return bool|null
+     */
+    public function isBest(): ?bool
+    {
+        return $this->isBest;
+    }
+
+    /**
      * Setter for IsBest.
      * @param bool $isBest
      *
@@ -193,14 +187,6 @@ class Answer
         $this->isBest = $isBest;
 
         return $this;
-    }
-
-    /**
-     * @return bool|null
-     */
-    public function isBest(): ?bool
-    {
-        return $this->isBest;
     }
 
     /**

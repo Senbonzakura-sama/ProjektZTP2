@@ -1,17 +1,19 @@
 <?php
 /**
- * SeciurityTest
+ * SeciurityTest.
  */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- *
+ * SecurityControllerTest.
  */
 class SecurityControllerTest extends WebTestCase
 {
     /**
+     * testLogin.
      * @return void
      */
     public function testLogin(): void

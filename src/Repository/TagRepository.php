@@ -2,6 +2,7 @@
 /**
  * Tag Repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Tag;
@@ -74,15 +75,16 @@ class TagRepository extends ServiceEntityRepository
         $this->_em->remove($tag);
         $this->_em->flush();
     }
-    ///**
-     //* findOneById.
-     //* @param int $id
-     //*
-     //* @return void
-     //*/
-    //public function findOneById(int $id)
-    //{
-    //}
+
+    // /**
+    // * findOneById.
+    // * @param int $id
+    // *
+    // * @return void
+    // */
+    // public function findOneById(int $id)
+    // {
+    // }
     /**
      * findOneById.
      * @param int $id
@@ -100,18 +102,17 @@ class TagRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
-
-    ///**
+    // /**
     // * findOneByTitle
     // * @param string $title
     // *
     // * @return void
     // */
-    //public function findOneByTitle(string $title)
-    //{
-    //}
+    // public function findOneByTitle(string $title)
+    // {
+    // }
     /**
-     * findOneByTitle
+     * findOneByTitle.
      * @param string $title
      *
      * @return Tag|null
@@ -126,9 +127,9 @@ class TagRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+
     /**
      * Get or create new query builder.
-     *
      *
      * @return QueryBuilder Query builder
      */

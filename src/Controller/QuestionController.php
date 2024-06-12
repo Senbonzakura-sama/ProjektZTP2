@@ -12,7 +12,7 @@ use App\Form\Type\AnswerType;
 use App\Form\Type\QuestionType;
 use App\Service\AnswerService;
 use App\Service\QuestionServiceInterface;
-use DateTime;
+use DateTime as DateTimeAlias;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,21 +30,16 @@ class QuestionController extends AbstractController
 {
     /**
      * Question Service.
-     *
-     * @var QuestionServiceInterface
      */
     private QuestionServiceInterface $questionService;
 
     /**
      * Translator.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
     /**
      * Constructor.
-     *
      * @param QuestionServiceInterface $questionService
      * @param AnswerService            $answerService
      * @param TranslatorInterface      $translator
@@ -58,10 +53,9 @@ class QuestionController extends AbstractController
 
     /**
      * Index action.
+     * @param Request $request
      *
-     * @param   Request $request
-     *
-     * @return  Response
+     * @return Response
      */
     #[Route(name: 'question_index', methods: 'GET')]
     public function index(Request $request): Response
@@ -75,19 +69,15 @@ class QuestionController extends AbstractController
 
     /**
      * Show action.
-     *
-     * @param  Request       $request
-     * @param  Question      $question
-     *
-     * @param  AnswerService $answerService
+     * @param Request       $request
+     * @param Question      $question
+     * @param AnswerService $answerService
      *
      * @return Response
-     *
      */
     #[Route('/{id}', name: 'question_show', requirements: ['id' => '[1-9]\d*'], methods: 'GET')]
     public function show(Request $request, Question $question, AnswerService $answerService): Response
     {
-
         $answer = new Answer();
 
         $form = $this->createForm(AnswerType::class, $answer);
@@ -114,6 +104,7 @@ class QuestionController extends AbstractController
     }
 
     /**
+     * Create action.
      * @param Request $request
      *
      * @return Response
@@ -152,10 +143,8 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * edit action.
-     *
+     * Edit action.
      * @param Request  $request
-     *
      * @param Question $question
      *
      * @return Response
@@ -196,7 +185,6 @@ class QuestionController extends AbstractController
 
     /**
      * Delete action.
-     *
      * @param Request  $request
      * @param Question $question
      *
@@ -238,13 +226,11 @@ class QuestionController extends AbstractController
 
     /**
      * Answer action.
-     *
      * @param Request       $request
      * @param Question      $question
      * @param AnswerService $answerService
      *
      * @return Response
-     *
      */
     #[Route('/{id}/answer', name: 'question_answer', requirements: ['id' => '[1-9]\d*'], methods: 'GET|POST')]
     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
@@ -257,8 +243,8 @@ class QuestionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $answer->setQuestion($question);
             $answer->setAuthor($this->getUser());
-            $answer->setCreatedAt(new DateTime());
-            $answer->setUpdatedAt(new DateTime());
+            $answer->setCreatedAt(new DateTimeAlias());
+            $answer->setUpdatedAt(new DateTimeAlias());
             $answerService->save($answer);
 
             $this->addFlash(

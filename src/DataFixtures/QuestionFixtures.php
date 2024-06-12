@@ -9,7 +9,6 @@ use App\Entity\Category;
 use App\Entity\Tag;
 use App\Entity\Question;
 use App\Entity\User;
-use DateTimeImmutable;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 /**
@@ -34,12 +33,12 @@ class QuestionFixtures extends AbstractBaseFixtures implements DependentFixtureI
             $question = new Question();
             $question->setTitle($this->faker->sentence);
             $question->setCreatedAt(
-                DateTimeImmutable::createFromMutable(
+                \DateTimeImmutable::createFromMutable(
                     $this->faker->dateTimeBetween('-100 days', '-1 days')
                 )
             );
             $question->setUpdatedAt(
-                DateTimeImmutable::createFromMutable(
+                \DateTimeImmutable::createFromMutable(
                     $this->faker->dateTimeBetween('-100 days', '-1 days')
                 )
             );

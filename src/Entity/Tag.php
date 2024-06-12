@@ -2,6 +2,7 @@
 /**
  * Tag Entity.
  */
+
 namespace App\Entity;
 
 use App\Repository\TagRepository;
@@ -47,6 +48,7 @@ class Tag
     #[ORM\Column(type: 'string', length: 64)]
     #[Assert\Type('string')]
     #[Gedmo\Slug(fields: ['title'])]
+    #[Assert\Length(min: 3, max: 64)]
     private ?string $slug = null;
 
     /**
@@ -55,6 +57,7 @@ class Tag
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 255)]
     private ?string $title = null;
 
     /**

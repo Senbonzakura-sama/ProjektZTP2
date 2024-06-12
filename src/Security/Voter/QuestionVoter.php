@@ -83,6 +83,7 @@ class QuestionVoter extends Voter
     }
 
     /**
+     * canDelete action.
      * @param QuestionAlias $question
      * @param UserInterface $user
      *
@@ -92,6 +93,7 @@ class QuestionVoter extends Voter
     {
         return $this->isAdmin($user) || $question->getAuthor() === $user;
     }
+
     /**
      * Checks if user has admin role.
      *

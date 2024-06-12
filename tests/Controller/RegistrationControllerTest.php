@@ -2,17 +2,19 @@
 /**
  * RegistrationControllerTest.
  */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class RegistrationControllerTest
+ * Class RegistrationControllerTest.
  */
 class RegistrationControllerTest extends WebTestCase
 {
     /**
-     * testRegister
+     * testRegister.
+     *
      * @return void
      */
     public function testRegister()
@@ -34,6 +36,6 @@ class RegistrationControllerTest extends WebTestCase
 
         $client->followRedirect();
         $this->assertSelectorExists('.alert-danger');
-        //$this->assertSelectorTextContains('.alert-success', 'Rejestracja zakończona pomyślnie');
+        // $this->assertSelectorTextContains('.alert-success', 'Rejestracja zakończona pomyślnie');
     }
 }

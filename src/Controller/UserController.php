@@ -24,7 +24,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class UserController extends AbstractController
 {
     /**
-     * Password hasher.
+     * Passwordhasher.
      */
     private UserPasswordHasherInterface $passwordHasher;
 
@@ -38,9 +38,9 @@ class UserController extends AbstractController
      */
     private TranslatorInterface $translator;
 
-
     /**
      * Constructor.
+     *
      * @param UserServiceInterface        $userService    User service
      * @param TranslatorInterface         $translator     Translator
      * @param UserPasswordHasherInterface $passwordHasher Hasher

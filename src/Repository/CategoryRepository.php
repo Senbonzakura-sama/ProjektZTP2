@@ -52,6 +52,7 @@ class CategoryRepository extends ServiceEntityRepository
             ->select('partial category.{id, createdAt, updatedAt, title}')
             ->orderBy('category.updatedAt', 'DESC');
     }
+
     /**
      * Save entity.
      * @param Category $category
@@ -63,6 +64,7 @@ class CategoryRepository extends ServiceEntityRepository
         $this->_em->persist($category);
         $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
@@ -73,9 +75,9 @@ class CategoryRepository extends ServiceEntityRepository
         $this->_em->remove($category);
         $this->_em->flush();
     }
+
     /**
      * Get or create new query builder.
-     *
      *
      * @return QueryBuilder Query builder
      */

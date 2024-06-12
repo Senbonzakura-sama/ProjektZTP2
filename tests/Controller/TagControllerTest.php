@@ -2,17 +2,19 @@
 /**
  * TagControllerTest.
  */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class TagControllerTest
+ * Class TagControllerTest.
  */
 class TagControllerTest extends WebTestCase
 {
     /**
      * testIndex.
+     *
      * @return void
      */
     public function testIndex()
@@ -24,6 +26,7 @@ class TagControllerTest extends WebTestCase
 
     /**
      * testShow.
+     *
      * @return void
      */
     public function testShow()

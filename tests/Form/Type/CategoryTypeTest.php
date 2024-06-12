@@ -1,7 +1,8 @@
 <?php
 /**
- * Category type tests
+ * Category type tests.
  */
+
 namespace App\Tests\Form\Type;
 
 use App\Entity\Category;
@@ -9,12 +10,12 @@ use App\Form\Type\CategoryType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
- * Category type test class
+ * Category type test class.
  */
 class CategoryTypeTest extends TypeTestCase
 {
     /**
-     * Test for submitting valid data
+     * Test for submitting valid data.
      */
     public function testSubmitValidData(): void
     {
@@ -31,7 +32,7 @@ class CategoryTypeTest extends TypeTestCase
         // when
         $form->submit($formData);
 
-        //then
+        // then
         $this->assertTrue($form->isSynchronized());
         $this->assertEquals($expected, $model);
     }

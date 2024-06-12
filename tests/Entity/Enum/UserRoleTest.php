@@ -2,6 +2,7 @@
 /**
  * UserRoleTest.
  */
+
 namespace App\Tests\Entity\Enum;
 
 use App\Entity\Enum\UserRole;
@@ -13,13 +14,13 @@ use PHPUnit\Framework\TestCase;
 class UserRoleTest extends TestCase
 {
     /**
-     * Test user label
+     * Test user label.
      *
      * @return void
      */
     public function testUserRole()
     {
         $this->assertEquals('label.role_user', UserRole::ROLE_USER->label());
-        //$this->assertEquals('label.role_user', UserRole::ROLE_USER->label());
+        // $this->assertEquals('label.role_user', UserRole::ROLE_USER->label());
     }
 }

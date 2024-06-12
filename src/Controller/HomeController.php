@@ -18,7 +18,6 @@ class HomeController extends AbstractController
      * Index action.
      *
      * @return Response HTTP response
-     *
      */
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
     public function index(): Response

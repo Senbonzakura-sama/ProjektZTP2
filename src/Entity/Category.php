@@ -53,6 +53,7 @@ class Category
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 255)]
     private ?string $title = null;
 
     /**
@@ -62,6 +63,7 @@ class Category
     #[Assert\Type('string')]
     #[Gedmo\Slug(fields: ['title'])]
     private ?string $slug = null;
+
     /**
      * Getter for Id.
      *

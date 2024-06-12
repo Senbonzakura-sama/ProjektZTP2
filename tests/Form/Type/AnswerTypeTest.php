@@ -1,7 +1,8 @@
 <?php
 /**
- * Answer type tests
+ * Answer type tests.
  */
+
 namespace App\Tests\Form\Type;
 
 use App\Entity\Answer;
@@ -9,12 +10,12 @@ use App\Form\Type\AnswerType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
- * Answer type test class
+ * Answer type test class.
  */
 class AnswerTypeTest extends TypeTestCase
 {
     /**
-     * Test for submitting valid data
+     * Test for submitting valid data.
      */
     public function testSubmitValidData(): void
     {
@@ -31,7 +32,7 @@ class AnswerTypeTest extends TypeTestCase
         // when
         $form->submit($formData);
 
-        //then
+        // then
         $this->assertTrue($form->isSynchronized());
         $this->assertEquals($expected, $model);
     }

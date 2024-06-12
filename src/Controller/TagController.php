@@ -168,7 +168,6 @@ class TagController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Tag $tag): Response
     {
-
         $form = $this->createForm(
             FormType::class,
             $tag,

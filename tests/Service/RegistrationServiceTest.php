@@ -2,6 +2,7 @@
 /**
  * RegistrationServiceTest.
  */
+
 namespace App\Tests\Service;
 
 use App\Entity\User;
@@ -19,6 +20,7 @@ class RegistrationServiceTest extends TestCase
     private UserRepository $userRepositoryMock;
 
     /**
+     * setUp action.
      * @return void
      */
     protected function setUp(): void
@@ -46,7 +48,6 @@ class RegistrationServiceTest extends TestCase
         $user->setNickname($userData['nickname']);
         $user->setPassword($userData['password']);
         $user->setRoles(['ROLE_USER']);
-
 
         $this->userRepositoryMock->expects($this->once())
             ->method('save')

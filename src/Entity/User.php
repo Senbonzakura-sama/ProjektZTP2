@@ -5,7 +5,6 @@
 
 namespace App\Entity;
 
-use AllowDynamicProperties;
 use App\Entity\Enum\UserRole;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -16,7 +15,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class User.
  */
-#[AllowDynamicProperties] #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[\AllowDynamicProperties]
+#[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: 'users')]
 #[ORM\UniqueConstraint(name: 'email_idx', columns: ['email'])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -35,6 +35,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     #[Assert\NotBlank]
     #[Assert\Email]
+    #[Assert\Length(min: 5, max: 180)]
     private ?string $email;
 
     /**
@@ -50,6 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column(type: 'string')]
     #[Assert\NotBlank]
+    #[Assert\Length(min: 6, max: 255)]
     private ?string $password;
 
     /**
@@ -57,6 +59,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column(type: 'string', length: 64, unique: true)]
     #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 64)]
     private ?string $nickname;
 
     /**
@@ -160,6 +163,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
+     * Getter for getSalt.
      * @return string|null
      */
     public function getSalt(): ?string
@@ -188,8 +192,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * setter for nickname.
-     *
+     * Setter for Nickname.
      * @param string|null $nickname
      *
      * @return $this
@@ -202,6 +205,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
+     * toString function.
      * @return string
      */
     public function __toString(): string

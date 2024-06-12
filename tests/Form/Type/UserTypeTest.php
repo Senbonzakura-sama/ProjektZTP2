@@ -15,7 +15,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class UserTypeTest extends TypeTestCase
 {
     /**
-     * testFormFields
+     * testFormFields.
      * @return void
      */
     public function testFormFields()
@@ -23,18 +23,18 @@ class UserTypeTest extends TypeTestCase
         $form = $this->factory->create(UserType::class);
 
         $this->assertTrue($form->has('email'));
-        $this->assertTrue($form->has('password'));
+        $this->assertTrue($form->has('Password'));
     }
 
     /**
-     * testSubmitValidData
+     * testSubmitValidData.
      * @return void
      */
     public function testSubmitValidData()
     {
         $formData = [
             'email' => 'test@example.com',
-            'password' => 'password123',
+            'Password' => 'password123',
         ];
 
         $form = $this->factory->create(UserType::class);

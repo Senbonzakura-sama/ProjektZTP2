@@ -47,6 +47,7 @@ interface AnswerServiceInterface
     public function delete(Answer $answer): void;
 
     /**
+     * unmarkAsBest.
      * @param Answer $answer
      *
      * @return void
