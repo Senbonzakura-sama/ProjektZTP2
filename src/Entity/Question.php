@@ -6,7 +6,6 @@
 namespace App\Entity;
 
 use App\Repository\QuestionRepository;
-use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,17 +32,17 @@ class Question
      * Created at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'create')]
-    private ?DateTimeImmutable $createdAt;
+    private ?\DateTimeImmutable $createdAt;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?DateTimeImmutable $updatedAt;
+    private ?\DateTimeImmutable $updatedAt;
 
     /**
      * Title.
@@ -141,9 +140,9 @@ class Question
     /**
      * Getter for created at.
      *
-     * @return DateTimeImmutable|null Created at
+     * @return \DateTimeImmutable|null Created at
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -151,9 +150,9 @@ class Question
     /**
      * Setter for created at.
      *
-     * @param DateTimeImmutable $createdAt Created at
+     * @param \DateTimeImmutable $createdAt Created at
      */
-    public function setCreatedAt(DateTimeImmutable $createdAt): void
+    public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -161,9 +160,9 @@ class Question
     /**
      * Getter for updated at.
      *
-     * @return DateTimeImmutable|null Updated at
+     * @return \DateTimeImmutable|null Updated at
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -171,9 +170,9 @@ class Question
     /**
      * Setter for updated at.
      *
-     * @param DateTimeImmutable $updatedAt Updated at
+     * @param \DateTimeImmutable $updatedAt Updated at
      */
-    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
@@ -252,7 +251,8 @@ class Question
 
     /**
      * Getter for Author.
-     * @return User|null
+     *
+     * @return User|null<mixed>
      */
     public function getAuthor(): ?User
     {
@@ -261,9 +261,10 @@ class Question
 
     /**
      * Setter for author.
-     * @param User|null $author
      *
-     * @return $this
+     * @param User|null<mixed> $author
+     *
+     * @return $this<mixed>
      */
     public function setAuthor(?User $author): Question
     {
@@ -311,7 +312,8 @@ class Question
 
     /**
      * Getter for Content.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getContent(): ?string
     {
@@ -320,9 +322,10 @@ class Question
 
     /**
      * Setter for content.
-     * @param string|null $content
      *
-     * @return void
+     * @param string|null<mixed> $content
+     *
+     * @return void<mixed>
      */
     public function setContent(?string $content): void
     {
@@ -331,7 +334,8 @@ class Question
 
     /**
      * Getter for email.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getEmail(): ?string
     {
@@ -340,9 +344,10 @@ class Question
 
     /**
      * Setter for Email.
-     * @param string $email
      *
-     * @return void
+     * @param string<mixed> $email
+     *
+     * @return void<mixed>
      */
     public function setEmail(string $email): void
     {
@@ -351,7 +356,8 @@ class Question
 
     /**
      * Getter for Nickname.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getNickname(): ?string
     {
@@ -360,9 +366,10 @@ class Question
 
     /**
      * Setter for Nickname.
-     * @param string $nickname
      *
-     * @return void
+     * @param string<mixed> $nickname
+     *
+     * @return void<mixed>
      */
     public function setNickname(string $nickname): void
     {

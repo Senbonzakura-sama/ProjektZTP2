@@ -6,8 +6,6 @@
 namespace App\Entity;
 
 use App\Repository\TagRepository;
-use DateTimeImmutable;
-use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -31,17 +29,17 @@ class Tag
      * Created at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'create')]
-    private ?DateTimeImmutable $createdAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?DateTimeImmutable $updatedAt = null;
+    private ?\DateTimeImmutable $updatedAt = null;
     /**
      * Slug.
      */
@@ -62,7 +60,8 @@ class Tag
 
     /**
      * Getter for id.
-     * @return int|null
+     *
+     * @return int|null<mixed>
      */
     public function getId(): ?int
     {
@@ -71,20 +70,22 @@ class Tag
 
     /**
      * Getter for CreatedAt.
-     * @return DateTimeInterface|null
+     *
+     * @return \DateTimeInterface|null<mixed>
      */
-    public function getCreatedAt(): ?DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
     }
 
     /**
      * Setter for CreatedAt.
-     * @param DateTimeImmutable|null $createdAt
      *
-     * @return $this
+     * @param \DateTimeImmutable|null<mixed> $createdAt
+     *
+     * @return $this<mixed>
      */
-    public function setCreatedAt(DateTimeImmutable|null $createdAt): static
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
 
@@ -93,20 +94,22 @@ class Tag
 
     /**
      * Getter for Updated at.
-     * @return DateTimeInterface|null
+     *
+     * @return \DateTimeInterface|null<mixed>
      */
-    public function getUpdatedAt(): ?DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
 
     /**
      * Setter for Updated at.
-     * @param DateTimeImmutable|null $updatedAt
      *
-     * @return $this
+     * @param \DateTimeImmutable|null<mixed> $updatedAt
+     *
+     * @return $this<mixed>
      */
-    public function setUpdatedAt(DateTimeImmutable|null $updatedAt): static
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
 
@@ -115,7 +118,8 @@ class Tag
 
     /**
      * Getter for Slug.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getSlug(): ?string
     {
@@ -124,9 +128,10 @@ class Tag
 
     /**
      * Setter for Slug.
-     * @param string $slug
      *
-     * @return $this
+     * @param string<mixed> $slug
+     *
+     * @return $this<mixed>
      */
     public function setSlug(string $slug): static
     {
@@ -137,7 +142,8 @@ class Tag
 
     /**
      * Getter for title.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getTitle(): ?string
     {
@@ -146,9 +152,10 @@ class Tag
 
     /**
      * Setter for title.
-     * @param string $title
      *
-     * @return $this
+     * @param string<mixed> $title
+     *
+     * @return $this<mixed>
      */
     public function setTitle(string $title): static
     {

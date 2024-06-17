@@ -24,33 +24,29 @@ interface AnswerServiceInterface
 
     /**
      * markAsBest.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function markAsBest(Answer $answer): void;
 
     /**
      * Save entity.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function save(Answer $answer): void;
 
     /**
      * Delete entity.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function delete(Answer $answer): void;
 
     /**
      * unmarkAsBest.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function unmarkAsBest(Answer $answer): void;
 }

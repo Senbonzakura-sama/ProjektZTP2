@@ -8,11 +8,9 @@ namespace App\Tests\Service;
 use App\Entity\Category;
 use App\Service\CategoryService;
 use App\Service\CategoryServiceInterface;
-use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\ORMException;
-use Exception;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -49,15 +47,15 @@ class CategoryServiceTest extends KernelTestCase
      * Test save.
      *
      * @throws ORMException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSave(): void
     {
         // given
         $expectedCategory = new Category();
         $expectedCategory->setTitle('Test_Category'.bin2hex(random_bytes(5)));
-        $expectedCategory->setCreatedAt(new DateTimeImmutable());
-        $expectedCategory->setUpdatedAt(new DateTimeImmutable());
+        $expectedCategory->setCreatedAt(new \DateTimeImmutable());
+        $expectedCategory->setUpdatedAt(new \DateTimeImmutable());
 
         // when
         $this->categoryService->save($expectedCategory);
@@ -79,14 +77,14 @@ class CategoryServiceTest extends KernelTestCase
      * Test delete.
      *
      * @throws ORMException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testDelete(): void
     {
         $categoryToDelete = new Category();
         $categoryToDelete->setTitle('TestCategory'.bin2hex(random_bytes(5)));
-        $categoryToDelete->setCreatedAt(new DateTimeImmutable());
-        $categoryToDelete->setUpdatedAt(new DateTimeImmutable());
+        $categoryToDelete->setCreatedAt(new \DateTimeImmutable());
+        $categoryToDelete->setUpdatedAt(new \DateTimeImmutable());
         $this->entityManager->persist($categoryToDelete);
         $this->entityManager->flush();
         $deletedCategoryId = $categoryToDelete->getId();

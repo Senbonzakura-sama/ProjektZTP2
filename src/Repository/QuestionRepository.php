@@ -125,9 +125,10 @@ class QuestionRepository extends ServiceEntityRepository
 
     /**
      * Query questions by Category.
-     * @param Category $category
      *
-     * @return QueryBuilder
+     * @param Category<mixed> $category
+     *
+     * @return QueryBuilder<mixed>
      */
     public function queryByCategory(Category $category): QueryBuilder
     {

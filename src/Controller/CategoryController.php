@@ -5,7 +5,6 @@
 
 namespace App\Controller;
 
-use AllowDynamicProperties;
 use App\Entity\Category;
 use App\Form\Type\CategoryType;
 use App\Service\CategoryServiceInterface;
@@ -21,7 +20,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * Class CategoryController.
  */
-#[AllowDynamicProperties] #[Route('/category')]
+#[\AllowDynamicProperties] #[Route('/category')]
 class CategoryController extends AbstractController
 {
     /**
@@ -36,9 +35,10 @@ class CategoryController extends AbstractController
 
     /**
      * Constructor.
-     * @param CategoryServiceInterface $categoryService
-     * @param QuestionServiceInterface $questionService
-     * @param TranslatorInterface      $translator
+     *
+     * @param CategoryServiceInterface $categoryService Category service
+     * @param QuestionServiceInterface $questionService Question service
+     * @param TranslatorInterface      $translator      Translator
      */
     public function __construct(CategoryServiceInterface $categoryService, QuestionServiceInterface $questionService, TranslatorInterface $translator)
     {
@@ -49,9 +49,10 @@ class CategoryController extends AbstractController
 
     /**
      * Index action.
-     * @param Request $request
      *
-     * @return Response
+     * @param Request $request Request
+     *
+     * @return Response HTTP Response
      */
     #[Route(name: 'category_index', methods: 'GET')]
     public function index(Request $request): Response
@@ -65,10 +66,11 @@ class CategoryController extends AbstractController
 
     /**
      * Show action.
-     * @param Category $category
-     * @param Request  $request
      *
-     * @return Response
+     * @param Category $category Category
+     * @param Request  $request  Request
+     *
+     * @return Response HTTP Response
      */
     #[Route(
         '/{id}',
@@ -91,9 +93,10 @@ class CategoryController extends AbstractController
 
     /**
      * Create action.
-     * @param Request $request
      *
-     * @return Response
+     * @param Request $request Request
+     *
+     * @return Response HTTP Response
      */
     #[Route(
         '/create',
@@ -127,10 +130,11 @@ class CategoryController extends AbstractController
 
     /**
      * Edit action.
-     * @param Request  $request
-     * @param Category $category
      *
-     * @return Response
+     * @param Request  $request  Request
+     * @param Category $category Category
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}/edit', name: 'category_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
     #[IsGranted('ROLE_ADMIN')]
@@ -168,10 +172,11 @@ class CategoryController extends AbstractController
 
     /**
      * Delete action.
-     * @param Request  $request
-     * @param Category $category
      *
-     * @return Response
+     * @param Request  $request  Request
+     * @param Category $category Category
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}/delete', name: 'category_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     #[IsGranted('ROLE_ADMIN')]
@@ -214,9 +219,10 @@ class CategoryController extends AbstractController
 
     /**
      * GenerateSLugFromTitle action.
-     * @param string $title
      *
-     * @return string
+     * @param string $title Title
+     *
+     * @return string<mixed>
      */
     private function generateSlugFromTitle(string $title): string
     {

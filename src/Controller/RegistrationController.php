@@ -29,9 +29,10 @@ class RegistrationController extends AbstractController
 
     /**
      * Constructor.
-     * @param RegistrationService $registrationService
-     * @param UserService         $userService
-     * @param TranslatorInterface $translator
+     *
+     * @param RegistrationService $registrationService Registration service
+     * @param UserService         $userService         User service
+     * @param TranslatorInterface $translator          Translator
      */
     public function __construct(RegistrationService $registrationService, UserService $userService, TranslatorInterface $translator)
     {
@@ -42,9 +43,10 @@ class RegistrationController extends AbstractController
 
     /**
      * Create action.
-     * @param Request $request
      *
-     * @return Response
+     * @param Request $request Request
+     *
+     * @return Response HTTP response
      *
      * @throws NonUniqueResultException
      */

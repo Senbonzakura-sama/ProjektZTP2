@@ -32,10 +32,10 @@ class RegistrationControllerTest extends WebTestCase
 
         $client->submit($form);
 
-        $this->assertResponseRedirects('/register');
+        $this->assertResponseRedirects('/question');
 
         $client->followRedirect();
-        $this->assertSelectorExists('.alert-danger');
+        $this->assertSelectorExists('.alert-success');
         // $this->assertSelectorTextContains('.alert-success', 'Rejestracja zakończona pomyślnie');
     }
 }

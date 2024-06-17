@@ -29,7 +29,8 @@ class UserServiceTest extends TestCase
 
     /**
      * setUp action.
-     * @return void
+     *
+     * @return void void
      */
     protected function setUp(): void
     {
@@ -39,7 +40,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testGetPaginatedList.
+     *
+     * @return void void
      */
     public function testGetPaginatedList()
     {
@@ -66,7 +69,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testSave.
+     *
+     * @return void void
      */
     public function testSave()
     {
@@ -80,7 +85,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testDelete.
+     *
+     * @return void void
      */
     public function testDelete()
     {
@@ -94,7 +101,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testCanBeDeleted.
+     *
+     * @return void void
      */
     public function testCanBeDeleted()
     {
@@ -111,7 +120,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testCanBeDeletedWithDependencies.
+     *
+     * @return void void
      */
     public function testCanBeDeletedWithDependencies()
     {
@@ -128,7 +139,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testCanBeDeletedWithNoResultException.
+     *
+     * @return void void
      */
     public function testCanBeDeletedWithNoResultException()
     {
@@ -145,7 +158,9 @@ class UserServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testCanBeDeletedWithNonUniqueResultException.
+     *
+     * @return void void
      */
     public function testCanBeDeletedWithNonUniqueResultException()
     {

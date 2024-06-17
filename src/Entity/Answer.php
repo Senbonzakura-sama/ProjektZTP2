@@ -6,7 +6,6 @@
 namespace App\Entity;
 
 use App\Repository\AnswerRepository;
-use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -27,11 +26,11 @@ class Answer
 
     #[ORM\Column(type: 'datetime')]
     #[Assert\Type(type: '\DateTimeInterface')]
-    private DateTimeInterface $createdAt;
+    private \DateTimeInterface $createdAt;
 
     #[ORM\Column(type: 'datetime')]
     #[Assert\Type(type: '\DateTimeInterface')]
-    private DateTimeInterface $updatedAt;
+    private \DateTimeInterface $updatedAt;
 
     #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
@@ -66,9 +65,9 @@ class Answer
     /**
      * Getter for Created At.
      *
-     * @return DateTimeInterface|null Created at
+     * @return \DateTimeInterface|null Created at
      */
-    public function getCreatedAt(): ?DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -76,9 +75,9 @@ class Answer
     /**
      * Setter for Created at.
      *
-     * @param DateTimeInterface $createdAt Created at
+     * @param \DateTimeInterface $createdAt Created at
      */
-    public function setCreatedAt(DateTimeInterface $createdAt): void
+    public function setCreatedAt(\DateTimeInterface $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -86,9 +85,9 @@ class Answer
     /**
      * Getter for Updated at.
      *
-     * @return DateTimeInterface|null Updated at
+     * @return \DateTimeInterface|null Updated at
      */
-    public function getUpdatedAt(): ?DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
@@ -96,9 +95,9 @@ class Answer
     /**
      * Setter for Updated at.
      *
-     * @param DateTimeInterface $updatedAt Updated at
+     * @param \DateTimeInterface $updatedAt Updated at
      */
-    public function setUpdatedAt(DateTimeInterface $updatedAt): void
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
@@ -168,8 +167,9 @@ class Answer
     }
 
     /**
-     * isBest
-     * @return bool|null
+     * isBest.
+     *
+     * @return bool|null<mixed>
      */
     public function isBest(): ?bool
     {
@@ -178,9 +178,10 @@ class Answer
 
     /**
      * Setter for IsBest.
-     * @param bool $isBest
      *
-     * @return $this
+     * @param bool<mixed> $isBest
+     *
+     * @return $this<mixed>
      */
     public function setIsBest(bool $isBest): self
     {
@@ -191,7 +192,8 @@ class Answer
 
     /**
      * Getter for IsBest.
-     * @return bool
+     *
+     * @return bool<mixed>
      */
     public function getIsBest(): bool
     {

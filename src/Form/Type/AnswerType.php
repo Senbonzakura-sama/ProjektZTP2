@@ -42,9 +42,10 @@ class AnswerType extends AbstractType
 
     /**
      * Configure Options.
-     * @param OptionsResolver $resolver
      *
-     * @return void
+     * @param OptionsResolver<mixed> $resolver
+     *
+     * @return void<mixed>
      */
     public function configureOptions(OptionsResolver $resolver): void
     {

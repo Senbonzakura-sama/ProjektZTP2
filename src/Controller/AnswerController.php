@@ -28,8 +28,9 @@ class AnswerController extends AbstractController
 
     /**
      * Constructor.
-     * @param AnswerService       $answerService
-     * @param TranslatorInterface $translator
+     *
+     * @param AnswerService       $answerService Answer Service
+     * @param TranslatorInterface $translator    Translator
      */
     public function __construct(AnswerService $answerService, TranslatorInterface $translator)
     {
@@ -39,10 +40,11 @@ class AnswerController extends AbstractController
 
     /**
      * Edit action.
-     * @param Request $request
-     * @param Answer  $answer
      *
-     * @return Response
+     * @param Request $request Request
+     * @param Answer  $answer  Answer
+     *
+     * @return Response HTTP Response
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/edit', name: 'answer_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
@@ -73,10 +75,11 @@ class AnswerController extends AbstractController
 
     /**
      * Delete action.
-     * @param Request $request
-     * @param Answer  $answer
      *
-     * @return Response
+     * @param Request $request Request
+     * @param Answer  $answer  Answer
+     *
+     * @return Response HTTP Response
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/delete', name: 'answer_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
@@ -108,10 +111,11 @@ class AnswerController extends AbstractController
 
     /**
      * markAsBest action.
-     * @param Answer        $answer
-     * @param AnswerService $answerService
      *
-     * @return Response
+     * @param Answer        $answer        Answer
+     * @param AnswerService $answerService Answer service
+     *
+     * @return Response HTTP Response
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/mark-best', name: 'answer_mark_best', methods: ['PUT'])]
@@ -125,10 +129,11 @@ class AnswerController extends AbstractController
 
     /**
      * unmarkBest action.
-     * @param Answer        $answer
-     * @param AnswerService $answerService
      *
-     * @return Response
+     * @param Answer        $answer        Answer
+     * @param AnswerService $answerService Answer service
+     *
+     * @return Response HTTP Response
      */
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/unmark-best', name: 'answer_unmark_best', methods: ['PUT'])]

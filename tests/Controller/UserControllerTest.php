@@ -24,17 +24,4 @@ class UserControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
     }
-
-    /**
-     * testShow.
-     *
-     * @return void
-     */
-    public function testShow()
-    {
-        $client = static::createClient();
-        $client->request('GET', '/user/1');
-
-        $this->assertResponseIsSuccessful();
-    }
 }

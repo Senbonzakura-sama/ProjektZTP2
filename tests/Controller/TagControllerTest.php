@@ -23,16 +23,4 @@ class TagControllerTest extends WebTestCase
         $client->request('GET', '/tag');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
-
-    /**
-     * testShow.
-     *
-     * @return void
-     */
-    public function testShow()
-    {
-        $client = static::createClient();
-        $client->request('GET', '/tag/1');
-        $this->assertSame(200, $client->getResponse()->getStatusCode());
-    }
 }

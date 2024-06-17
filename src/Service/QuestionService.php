@@ -57,10 +57,11 @@ class QuestionService implements QuestionServiceInterface
 
     /**
      * Get paginated list by author.
-     * @param int  $page
-     * @param User $author
      *
-     * @return PaginationInterface
+     * @param mixed $page
+     * @param mixed $author
+     *
+     * @return PaginationInterface<string, mixed>
      */
     public function getPaginatedListByAuthor(int $page, User $author): PaginationInterface
     {

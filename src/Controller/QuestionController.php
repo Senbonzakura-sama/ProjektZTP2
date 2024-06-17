@@ -5,7 +5,6 @@
 
 namespace App\Controller;
 
-use AllowDynamicProperties;
 use App\Entity\Answer;
 use App\Entity\Question;
 use App\Form\Type\AnswerType;
@@ -25,7 +24,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * Question Controller.
  */
-#[AllowDynamicProperties] #[Route('/question')]
+#[\AllowDynamicProperties] #[Route('/question')]
 class QuestionController extends AbstractController
 {
     /**
@@ -40,9 +39,10 @@ class QuestionController extends AbstractController
 
     /**
      * Constructor.
-     * @param QuestionServiceInterface $questionService
-     * @param AnswerService            $answerService
-     * @param TranslatorInterface      $translator
+     *
+     * @param QuestionServiceInterface $questionService Question service
+     * @param AnswerService            $answerService   Answer service
+     * @param TranslatorInterface      $translator      Translator
      */
     public function __construct(QuestionServiceInterface $questionService, AnswerService $answerService, TranslatorInterface $translator)
     {
@@ -53,9 +53,10 @@ class QuestionController extends AbstractController
 
     /**
      * Index action.
-     * @param Request $request
      *
-     * @return Response
+     * @param Request $request Request
+     *
+     * @return Response HTTP Response
      */
     #[Route(name: 'question_index', methods: 'GET')]
     public function index(Request $request): Response
@@ -69,11 +70,12 @@ class QuestionController extends AbstractController
 
     /**
      * Show action.
-     * @param Request       $request
-     * @param Question      $question
-     * @param AnswerService $answerService
      *
-     * @return Response
+     * @param Request       $request       Request
+     * @param Question      $question      Question
+     * @param AnswerService $answerService Answer service
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}', name: 'question_show', requirements: ['id' => '[1-9]\d*'], methods: 'GET')]
     public function show(Request $request, Question $question, AnswerService $answerService): Response
@@ -99,15 +101,16 @@ class QuestionController extends AbstractController
             'question/show.html.twig',
             ['question' => $question,
                 'form' => $form->createView(),
-                    'answers' => $answerService->findBy(['question' => $question]), ]
+                'answers' => $answerService->findBy(['question' => $question]), ]
         );
     }
 
     /**
      * Create action.
-     * @param Request $request
      *
-     * @return Response
+     * @param Request $request Request
+     *
+     * @return Response HTTP Response
      */
     #[Route('/create', name: 'question_create', methods: 'GET|POST')]
     public function create(Request $request): Response
@@ -144,10 +147,11 @@ class QuestionController extends AbstractController
 
     /**
      * Edit action.
-     * @param Request  $request
-     * @param Question $question
      *
-     * @return Response
+     * @param Request  $request  Request
+     * @param Question $question Question
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}/edit', name: 'question_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
     #[IsGranted('EDIT', subject: 'question')]
@@ -185,10 +189,11 @@ class QuestionController extends AbstractController
 
     /**
      * Delete action.
-     * @param Request  $request
-     * @param Question $question
      *
-     * @return Response
+     * @param Request  $request  Request
+     * @param Question $question Question
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}/delete', name: 'question_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     #[IsGranted('DELETE', subject: 'question')]
@@ -226,11 +231,12 @@ class QuestionController extends AbstractController
 
     /**
      * Answer action.
-     * @param Request       $request
-     * @param Question      $question
-     * @param AnswerService $answerService
      *
-     * @return Response
+     * @param Request       $request       Request
+     * @param Question      $question      Question
+     * @param AnswerService $answerService Answer Service
+     *
+     * @return Response HTTP Response
      */
     #[Route('/{id}/answer', name: 'question_answer', requirements: ['id' => '[1-9]\d*'], methods: 'GET|POST')]
     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]

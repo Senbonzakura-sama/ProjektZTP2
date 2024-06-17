@@ -55,9 +55,10 @@ class CategoryRepository extends ServiceEntityRepository
 
     /**
      * Save entity.
-     * @param Category $category
      *
-     * @return void
+     * @param Category<mixed> $category
+     *
+     * @return void<mixed>
      */
     public function save(Category $category): void
     {

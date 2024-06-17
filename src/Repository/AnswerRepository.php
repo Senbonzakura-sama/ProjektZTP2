@@ -75,9 +75,10 @@ class AnswerRepository extends ServiceEntityRepository
 
     /**
      * resetBestAnswerForQuestion.
-     * @param Question $question
      *
-     * @return void
+     * @param Question<mixed> $question
+     *
+     * @return void<mixed>
      */
     public function resetBestAnswerForQuestion(Question $question): void
     {

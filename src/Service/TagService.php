@@ -28,8 +28,9 @@ class TagService implements TagServiceInterface
 
     /**
      * Constructor.
-     * @param TagRepository      $tagRepository
-     * @param PaginatorInterface $paginator
+     *
+     * @param TagRepository<string, mixed>      $tagRepository
+     * @param PaginatorInterface<string, mixed> $paginator
      */
     public function __construct(TagRepository $tagRepository, PaginatorInterface $paginator)
     {
@@ -55,7 +56,8 @@ class TagService implements TagServiceInterface
 
     /**
      * FindOneById.
-     * @param int $id
+     *
+     * @param mixed $id
      *
      * @return Tag|null//tutaj dodane
      *
@@ -78,9 +80,8 @@ class TagService implements TagServiceInterface
 
     /**
      * Delete entity.
-     * @param Tag $tag
      *
-     * @return void
+     * @param mixed $tag
      */
     public function delete(Tag $tag): void
     {

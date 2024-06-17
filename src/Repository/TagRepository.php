@@ -87,9 +87,10 @@ class TagRepository extends ServiceEntityRepository
     // }
     /**
      * findOneById.
-     * @param int $id
      *
-     * @return Tag|null
+     * @param int<mixed> $id
+     *
+     * @return Tag|null<mixed>
      *
      * @throws NonUniqueResultException
      */
@@ -113,9 +114,10 @@ class TagRepository extends ServiceEntityRepository
     // }
     /**
      * findOneByTitle.
-     * @param string $title
      *
-     * @return Tag|null
+     * @param string<mixed> $title
+     *
+     * @return Tag|null<mixed>
      *
      * @throws NonUniqueResultException
      */

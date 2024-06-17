@@ -29,7 +29,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Constructor.
-     * @param ManagerRegistry $registry
+     *
+     * @param ManagerRegistry<string, mixed> $registry
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -50,10 +51,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Save action.
-     * @param User $entity
-     * @param bool $flush
      *
-     * @return void
+     * @param User<mixed> $entity
+     * @param bool<mixed> $flush
+     *
+     * @return void<mixed>
      */
     public function save(User $entity, bool $flush = false): void
     {
@@ -66,10 +68,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Remove action.
-     * @param User $entity
-     * @param bool $flush
      *
-     * @return void
+     * @param User<mixed> $entity
+     * @param bool<mixed> $flush
+     *
+     * @return void<mixed>
      */
     public function remove(User $entity, bool $flush = false): void
     {
@@ -82,10 +85,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * upgradePassword action.
-     * @param PasswordAuthenticatedUserInterface $user
-     * @param string                             $newHashedPassword
      *
-     * @return void
+     * @param PasswordAuthenticatedUserInterface<mixed> $user
+     * @param string<mixed>                             $newHashedPassword
+     *
+     * @return void<mixed>
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -100,9 +104,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * countByUser.
-     * @param User $user
      *
-     * @return int
+     * @param User<mixed> $user
+     *
+     * @return mixed
      *
      * @throws NoResultException
      * @throws NonUniqueResultException
@@ -120,11 +125,13 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
 
     // dodane
+
     /**
      * findOneByEmail.
-     * @param string $email
      *
-     * @return User|null
+     * @param string<mixed> $email
+     *
+     * @return User|null<mixed>
      *
      * @throws NonUniqueResultException
      */

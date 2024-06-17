@@ -164,7 +164,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Getter for getSalt.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getSalt(): ?string
     {
@@ -184,7 +185,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Getter for Nickname.
-     * @return string|null
+     *
+     * @return string|null<mixed>
      */
     public function getNickname(): ?string
     {
@@ -193,7 +195,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Setter for Nickname.
-     * @param string|null $nickname
+     *
+     * @param string|null<mixed> $nickname
      *
      * @return $this
      */
@@ -206,7 +209,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * toString function.
-     * @return string
+     *
+     * @return string<mixed>
      */
     public function __toString(): string
     {
@@ -215,7 +219,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Setter for Author.
-     * @param string|null $author
+     *
+     * @param string|null<mixed> $author
      *
      * @return $this
      */

@@ -84,10 +84,11 @@ class QuestionVoter extends Voter
 
     /**
      * canDelete action.
-     * @param QuestionAlias $question
-     * @param UserInterface $user
      *
-     * @return bool
+     * @param mixed $question
+     * @param mixed $user
+     *
+     * @return mixed
      */
     private function canDelete(QuestionAlias $question, UserInterface $user): bool
     {

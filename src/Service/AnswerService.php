@@ -33,9 +33,10 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Constructor.
-     * @param AnswerRepository       $answerRepository
-     * @param PaginatorInterface     $paginator
-     * @param EntityManagerInterface $entityManager
+     *
+     * @param AnswerRepository       $answerRepository Category repository
+     * @param PaginatorInterface     $paginator        Paginator
+     * @param EntityManagerInterface $entityManager    Entity manager
      */
     public function __construct(AnswerRepository $answerRepository, PaginatorInterface $paginator, EntityManagerInterface $entityManager)
     {
@@ -62,9 +63,8 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Save Answer.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function save(Answer $answer): void
     {
@@ -73,9 +73,8 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Delete answer.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function delete(Answer $answer): void
     {
@@ -84,9 +83,10 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Find by question.
-     * @param array $question
      *
-     * @return array
+     * @param mixed $question
+     *
+     * @return mixed
      */
     public function findBy(array $question): array
     {
@@ -95,9 +95,8 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Mark as best.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function markAsBest(Answer $answer): void
     {
@@ -109,9 +108,8 @@ class AnswerService implements AnswerServiceInterface
 
     /**
      * Unmark as best.
-     * @param Answer $answer
      *
-     * @return void
+     * @param mixed $answer
      */
     public function unmarkAsBest(Answer $answer): void
     {

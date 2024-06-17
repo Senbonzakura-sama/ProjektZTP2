@@ -30,8 +30,9 @@ class UserService implements UserServiceInterface
 
     /**
      * Constructor.
-     * @param UserRepository     $userRepository
-     * @param PaginatorInterface $paginator
+     *
+     * @param UserRepository<string, mixed>     $userRepository
+     * @param PaginatorInterface<string, mixed> $paginator
      */
     public function __construct(UserRepository $userRepository, PaginatorInterface $paginator)
     {
@@ -91,9 +92,10 @@ class UserService implements UserServiceInterface
 
     /**
      * canBeDeleted.
-     * @param User $user
      *
-     * @return bool
+     * @param mixed $user
+     *
+     * @return mixed
      */
     public function canBeDeleted(User $user): bool
     {

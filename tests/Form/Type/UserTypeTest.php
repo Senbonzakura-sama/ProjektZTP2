@@ -2,6 +2,7 @@
 /**
  * UserTypeTest.
  */
+
 namespace App\Tests\Form\Type;
 
 use App\Entity\User;
@@ -16,6 +17,7 @@ class UserTypeTest extends TypeTestCase
 {
     /**
      * testFormFields.
+     *
      * @return void
      */
     public function testFormFields()
@@ -28,6 +30,7 @@ class UserTypeTest extends TypeTestCase
 
     /**
      * testSubmitValidData.
+     *
      * @return void
      */
     public function testSubmitValidData()
@@ -52,6 +55,7 @@ class UserTypeTest extends TypeTestCase
 
     /**
      * testConfigureOptions.
+     *
      * @return void
      */
     public function testConfigureOptions()
@@ -67,6 +71,7 @@ class UserTypeTest extends TypeTestCase
 
     /**
      * testGetBlockPrefix.
+     *
      * @return void
      */
     public function testGetBlockPrefix()

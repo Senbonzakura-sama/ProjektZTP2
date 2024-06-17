@@ -7,7 +7,6 @@ namespace App\Tests\Service;
 
 use App\Entity\Tag;
 use App\Service\TagService;
-use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NonUniqueResultException;
@@ -25,6 +24,8 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Set up test.
+     *
+     * @return void void
      */
     public function setUp(): void
     {
@@ -34,17 +35,19 @@ class TagServiceTest extends KernelTestCase
     }
 
     /**
-     * Save test.
+     * TestSave.
+     *
+     * @return void void
      *
      * @throws NoResultException
-     * @throws NonUniqueResultException|NoResultException|NonUniqueResultException
+     * @throws NonUniqueResultException
      */
     public function testSave(): void
     {
         // given
         $expectedTag = new Tag();
-        $expectedTag->setCreatedAt(new DateTimeImmutable());
-        $expectedTag->setUpdatedAt(new DateTimeImmutable());
+        $expectedTag->setCreatedAt(new \DateTimeImmutable());
+        $expectedTag->setUpdatedAt(new \DateTimeImmutable());
         $expectedTag->setTitle('Tag Test');
 
         // when
@@ -66,14 +69,16 @@ class TagServiceTest extends KernelTestCase
     /**
      * Delete test.
      *
+     * @return void void
+     *
      * @throws NonUniqueResultException
      */
     public function testDelete(): void
     {
         // given
         $tagToDelete = new Tag();
-        $tagToDelete->setCreatedAt(new DateTimeImmutable());
-        $tagToDelete->setUpdatedAt(new DateTimeImmutable());
+        $tagToDelete->setCreatedAt(new \DateTimeImmutable());
+        $tagToDelete->setUpdatedAt(new \DateTimeImmutable());
         $tagToDelete->setTitle('Tag Test');
 
         $this->entityManager->persist($tagToDelete);
@@ -97,6 +102,8 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Paginated list test.
+     *
+     * @return void void
      */
     public function testPaginatedList(): void
     {
@@ -109,8 +116,8 @@ class TagServiceTest extends KernelTestCase
 
         while ($counter < $dataSetSize) {
             $tag = new Tag();
-            $tag->setCreatedAt(new DateTimeImmutable());
-            $tag->setUpdatedAt(new DateTimeImmutable());
+            $tag->setCreatedAt(new \DateTimeImmutable());
+            $tag->setUpdatedAt(new \DateTimeImmutable());
             $tag->setTitle('Tag Test #'.$counter);
             $this->tagService->save($tag);
 
@@ -126,6 +133,8 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Test findOneById method.
+     *
+     * @return void void
      *
      * @throws NonUniqueResultException
      */

@@ -21,7 +21,8 @@ class RegistrationServiceTest extends TestCase
 
     /**
      * setUp action.
-     * @return void
+     *
+     * @return void void
      */
     protected function setUp(): void
     {
@@ -34,7 +35,9 @@ class RegistrationServiceTest extends TestCase
     }
 
     /**
-     * @return void
+     * testSaveUser.
+     *
+     * @return void void
      */
     public function testSaveUser()
     {

@@ -14,7 +14,8 @@ class SecurityControllerTest extends WebTestCase
 {
     /**
      * testLogin.
-     * @return void
+     *
+     * @return void void
      */
     public function testLogin(): void
     {

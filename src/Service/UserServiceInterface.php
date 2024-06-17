@@ -38,9 +38,8 @@ interface UserServiceInterface
 
     /**
      * canBeDeleted.
-     * @param User $user
      *
-     * @return bool
+     * @param mixed $user
      */
     public function canBeDeleted(User $user): bool;
 }

@@ -24,7 +24,8 @@ class UserVoter extends Voter
 
     /**
      * Constructor.
-     * @param Security $security
+     *
+     * @param Security<string, mixed> $security
      */
     public function __construct(Security $security)
     {
@@ -33,10 +34,11 @@ class UserVoter extends Voter
 
     /**
      * supports.
-     * @param string $attribute
-     * @param $subject
      *
-     * @return bool
+     * @param mixed  $attribute
+     * @param string $subject
+     *
+     * @return mixed
      */
     protected function supports(string $attribute, $subject): bool
     {
@@ -46,11 +48,12 @@ class UserVoter extends Voter
 
     /**
      * voteOnAttribute.
-     * @param string         $attribute
-     * @param $subject
-     * @param TokenInterface $token
      *
-     * @return bool
+     * @param mixed                         $attribute
+     * @param string                        $subject
+     * @param TokenInterface<string, mixed> $token
+     *
+     * @return mixed
      */
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token): bool
     {
